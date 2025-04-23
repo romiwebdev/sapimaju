@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SapiMaju - Platform Jual Beli Sapi Premium</title>
+    <meta name="description" content="Platform terpercaya untuk jual beli sapi berkualitas. Hubungan langsung antara peternak dan pembeli.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" >
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2E8B57',
+                        secondary: '#8B5A2B',
+                        accent: '#FFD700',
+                        cream: '#F5F5DC',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Lato', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body bg-cream text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white z-50 border-b border-gray-100">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between items-center h-16">
+            
+            <!-- Logo with modern typography -->
+            <div class="flex-shrink-0 flex items-center">
+              <i class="fas fa-cow text-primary text-xl mr-2"></i>
+              <a href="#" class="text-xl font-extrabold tracking-tight">
+                <span class="text-primary">Sapi</span>
+                <span class="text-gray-900">Maju</span>
+              </a>
+            </div>
+      
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-4">
+              <a href="#home" class="nav-link relative text-gray-600 hover:text-gray-900 px-1 py-2 text-sm font-medium flex items-center">
+                <i class="fas fa-home mr-2 text-base"></i>
+                Beranda
+              </a>
+              <a href="#sapi" class="nav-link relative text-gray-600 hover:text-gray-900 px-1 py-2 text-sm font-medium flex items-center">
+                <i class="fas fa-cow mr-2 text-base"></i>
+                Katalog
+              </a>
+              <a href="#tentang" class="nav-link relative text-gray-600 hover:text-gray-900 px-1 py-2 text-sm font-medium flex items-center">
+                <i class="fas fa-warehouse mr-2 text-base"></i>
+                Peternakan
+              </a>
+              <a href="#proses" class="nav-link relative text-gray-600 hover:text-gray-900 px-1 py-2 text-sm font-medium flex items-center">
+                <i class="fas fa-exchange-alt mr-2 text-base"></i>
+                Proses
+              </a>
+              <div class="relative group">
+                <button class="text-gray-600 hover:text-gray-900 px-1 py-2 text-sm font-medium flex items-center">
+                  <i class="fas fa-ellipsis-h mr-2 text-base"></i>
+                  Lainnya
+                  <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </button>
+                <div class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block">
+                  <div class="py-1">
+                    <a href="#testimoni" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center">
+                      <i class="fas fa-star mr-2"></i> Testimoni
+                    </a>
+                    <a href="#faq" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center">
+                      <i class="fas fa-question-circle mr-2"></i> FAQ
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- CTA Buttons -->
+            <div class="hidden md:flex items-center space-x-4">
+              
+              <a href="https://wa.me/6285330000427" class="bg-primary hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-sm transition-all duration-200 transform hover:scale-105 flex items-center">
+                <i class="fab fa-whatsapp mr-2"></i>
+                WhatsApp
+              </a>
+            </div>
+      
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+              <button id="mobileMenuButton" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-200">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 flex items-center">
+              <i class="fas fa-home mr-3 w-4 text-center"></i> Beranda
+            </a>
+            <a href="#sapi" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 flex items-center">
+              <i class="fas fa-cow mr-3 w-4 text-center"></i> Katalog
+            </a>
+            <a href="#tentang" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 flex items-center">
+              <i class="fas fa-warehouse mr-3 w-4 text-center"></i> Peternakan
+            </a>
+            <a href="#proses" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 flex items-center">
+              <i class="fas fa-exchange-alt mr-3 w-4 text-center"></i> Proses
+            </a>
+            <a href="#testimoni" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 flex items-center">
+              <i class="fas fa-star mr-3 w-4 text-center"></i> Testimoni
+            </a>
+            <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 flex items-center">
+              <i class="fas fa-question-circle mr-3 w-4 text-center"></i> FAQ
+            </a>
+            <div class="pt-4 border-t border-gray-200">
+              <a href="tel:+6285330000427" class="block w-full px-4 py-2 text-center rounded-md bg-gray-100 text-primary font-medium flex items-center justify-center">
+                <i class="fas fa-phone-alt mr-2"></i> Telepon Kami
+              </a>
+              <a href="https://wa.me/6285330000427" class="block w-full mt-2 px-4 py-2 text-center rounded-md bg-primary text-white font-medium shadow-sm flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-32 pb-20 px-6 flex items-center min-h-screen">
+        <div class="container mx-auto text-center">
+            <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6 text-primary">
+                Jual Beli Sapi <span class="text-secondary">#1</span> di Indonesia
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+                Platform terintegrasi untuk peternak dan pembeli sapi berkualitas. Mudah, Aman, Terpercaya.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#sapi" class="bg-primary hover:bg-green-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition shadow-lg">
+                    Lihat Sapi Populer
+                </a>
+                <a href="#kontak" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition">
+                    Konsultasi Gratis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Cows Section -->
+    <section id="sapi" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-primary">Sapi Unggulan Kami</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto">Pilihan sapi berkualitas tinggi dari peternakan terbaik di Bojonegoro</p>
+            </div>
+
+            <!-- Cow Cards -->
+            <div id="cowCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+
+            <div class="text-center mt-12">
+              <button onclick="lihatLebihBanyak()" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition">
+                Lihat Lebih Banyak
+              </button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://i.imgur.com/BtxgyWA.jpeg" alt="Peternakan SapiMaju" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://i.imgur.com/D2hIA4Q.jpeg" alt="Tim SapiMaju" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="col-span-2 rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://i.imgur.com/0A2VKvz.jpeg" alt="Kandang Sapi" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6 text-primary">Peternakan SapiMaju</h2>
+                    <p class="mb-6">SapiMaju berdiri sejak tahun 2010 sebagai peternakan dan platform jual beli sapi terpercaya. Berlokasi di Bojonegoro, kami melayani pelanggan dari seluruh Indonesia dengan sistem yang aman dan efisien.</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="font-semibold text-xl mb-3 text-secondary">Misi & Visi</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Menjadi penghubung utama antara peternak lokal dan pasar nasional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Meningkatkan kualitas dan transparansi dalam transaksi jual beli sapi</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                <span>Memberikan edukasi dan pendampingan kepada peternak mitra</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="text-3xl font-bold text-primary mb-1 counter" data-target="523">1000+</div>
+                            <div class="text-sm">Sapi Terjual</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="text-3xl font-bold text-primary">100+</div>
+                            <div class="text-sm">Mitra Peternak</div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-start">
+                            <img src="https://i.imgur.com/Xjrjsml.jpeg" alt="Bapak H. Ahmad Setiawan" class="w-16 h-16 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold text-lg">Bapak H. Suyetno</h4>
+                                <p class="text-sm text-gray-600 mb-2">Pendiri & CEO SapiMaju</p>
+                                <p class="italic">"Dengan lebih dari 15 tahun pengalaman, kami berkomitmen membangun ekosistem peternakan berbasis teknologi dan kemitraan jangka panjang."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="proses" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-primary">Cara Membeli Sapi</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto">Proses pembelian yang mudah dan transparan hanya dalam 4 langkah</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                    <!-- Step 1 -->
+                    <div class="relative timeline-step">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center text-white text-3xl shadow-lg">
+                            1
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Pilih Sapi</h3>
+                        <p class="text-gray-600">Via website atau WhatsApp</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative timeline-step">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center text-white text-3xl shadow-lg">
+                            2
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Negosiasi</h3>
+                        <p class="text-gray-600">Hubungi langsung via WhatsApp</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative timeline-step">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center text-white text-3xl shadow-lg">
+                            3
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Pembayaran</h3>
+                        <p class="text-gray-600">COD atau transfer</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center text-white text-3xl shadow-lg">
+                            4
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Pengiriman</h3>
+                        <p class="text-gray-600">Antar langsung atau ambil di lokasi</p>
+                    </div>
+                </div>
+
+                <div class="mt-16 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-circle text-yellow-400 text-xl mt-1 mr-3"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-yellow-800">Keamanan Transaksi</h4>
+                            <p class="text-yellow-700">Kami hanya menerima pembayaran di lokasi peternakan atau melalui rekening resmi perusahaan. Hindari penipuan dengan selalu memverifikasi nomor WhatsApp kami melalui website ini.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <p class="font-semibold">Alamat Peternakan:</p>
+                    <p>Desa Semawot RT 02 RW 01, Kec. Sukosewu, Kab. Bojonegoro, Jawa Timur 62183</p>
+                    <p class="mt-2">Buka setiap hari jam 06.00–17.00 WIB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimoni" class="py-20 bg-cream">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-primary">Apa Kata Pelanggan?</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto">Testimoni jujur dari peternak dan pembeli sapi kami</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-6 rounded-xl testimonial-card">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Budi Santoso" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold">Budi Santoso</h4>
+                                <p class="text-sm text-gray-600">Peternak, Bojonegoro</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="italic">"Sapi yang saya beli sehat dan sesuai deskripsi. Pengiriman tepat waktu, pelayanan sangat memuaskan."</p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-6 rounded-xl testimonial-card">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.imgur.com/ViRiGQG.png" alt="Dewi Lestari" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold">Sukardi</h4>
+                                <p class="text-sm text-gray-600">Petani, Bojonegoro</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="italic">"Sudah 3 tahun langganan beli sapi di SapiMaju. Harganya kompetitif dan kualitas selalu terjaga."</p>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-6 rounded-xl testimonial-card">
+                        <div class="flex items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="H. Mahmud" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <h4 class="font-bold">H. Mahmud</h4>
+                                <p class="text-sm text-gray-600">Pengusaha, Tuban</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400 mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="italic">"Untuk kebutuhan kurban tahun ini, saya memilih SapiMaju karena terpercaya dan ada garansi kesehatan."</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 text-primary">Pertanyaan Umum</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto">Temukan jawaban untuk pertanyaan yang sering diajukan</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-4">
+                    <input type="text" placeholder="Cari pertanyaan..." class="w-full p-4 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div class="space-y-4" id="faqContainer"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h2>
+                <div class="w-24 h-1 bg-white bg-opacity-50 mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto">Punya pertanyaan atau ingin konsultasi? Tim kami siap membantu 24/7</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm">
+                        <h3 class="font-bold text-xl mb-6">Kirim Pesan</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label  class="block mb-2">Nama Lengkap</label>
+                                <input id="nama" type="text" class="w-full p-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-10 focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block mb-2">Email</label>
+                                <input id="email" type="email" class="w-full p-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-10 focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block mb-2">Subjek</label>
+                                <select id="subjek" class="w-full p-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-10 focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                                    <option>Pertanyaan Umum</option>
+                                    <option>Konsultasi Pembelian</option>
+                                    <option>Kerjasama Bisnis</option>
+                                    <option>Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block mb-2">Pesan</label>
+                                <textarea id="pesan" rows="4" class="w-full p-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:bg-opacity-10 focus:ring-2 focus:ring-white focus:ring-opacity-50"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-opacity-90 transition">Kirim Pesan</button>
+                        </form>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-xl mb-6">Informasi Kontak</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">WhatsApp</h4>
+                                    <a href="https://wa.me/6285330000427" class="hover:underline">0853-3000-0427</a>
+                                    <p class="text-sm opacity-80">Respon cepat via chat</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Email</h4>
+                                    <a href="mailto:info@sapimaju.com" class="hover:underline">info@sapimaju.com</a>
+                                    <p class="text-sm opacity-80">Respon dalam 1x24 jam</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Alamat Peternakan</h4>
+                                    <p>Desa Semawot RT 02 RW 01, Kec. Sukosewu, Kab. Bojonegoro, Jawa Timur 62183</p>
+                                    <p class="text-sm opacity-80 mt-1">Buka setiap hari jam 06.00–17.00 WIB</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 bg-white bg-opacity-10 p-6 rounded-xl">
+                            <h4 class="font-bold mb-4">Lokasi Kami</h4>
+                            <div class="aspect-w-16 aspect-h-9 bg-white bg-opacity-20 rounded-lg overflow-hidden">
+                              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3957.673133151176!2d111.92313918287759!3d-7.277983503465833!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e782b9322551b39%3A0x81182399eccaa665!2sPertenakan%20Sapi%20Yet!5e0!3m2!1sid!2sid!4v1745373010546!5m2!1sid!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100 pt-16 pb-10">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <!-- Column 1: About -->
+            <div class="md:col-span-2">
+              <div class="flex items-center mb-5">
+                <i class="fas fa-leaf text-emerald-400 text-2xl mr-3"></i>
+                <span class="font-heading text-2xl font-bold text-white">SapiMaju</span>
+              </div>
+              <p class="mb-6 text-gray-300 leading-relaxed">
+                Platform terdepan untuk transaksi jual beli sapi berkualitas. Menghubungkan peternak langsung dengan pembeli 
+                sejak 2010 dengan sistem terpercaya dan transparan.
+              </p>
+              <div class="flex space-x-5">
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-emerald-500 text-white flex items-center justify-center transition-all transform hover:-translate-y-1">
+                  <i class="fab fa-instagram text-lg"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-blue-600 text-white flex items-center justify-center transition-all transform hover:-translate-y-1">
+                  <i class="fab fa-facebook-f text-lg"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-cyan-400 text-white flex items-center justify-center transition-all transform hover:-translate-y-1">
+                  <i class="fab fa-tiktok text-lg"></i>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Column 2: Quick Links -->
+            <div>
+              <h4 class="font-bold text-lg mb-6 text-white border-b border-emerald-400 pb-2 inline-block">Navigasi</h4>
+              <ul class="space-y-3">
+                <li>
+                  <a href="#home" class="text-gray-300 hover:text-emerald-400 transition flex items-center group">
+                    <i class="fas fa-chevron-right text-xs mr-2 text-emerald-400 opacity-0 group-hover:opacity-100 transition"></i>
+                    Beranda
+                  </a>
+                </li>
+                <li>
+                  <a href="#sapi" class="text-gray-300 hover:text-emerald-400 transition flex items-center group">
+                    <i class="fas fa-chevron-right text-xs mr-2 text-emerald-400 opacity-0 group-hover:opacity-100 transition"></i>
+                    Katalog Sapi
+                  </a>
+                </li>
+                <li>
+                  <a href="#tentang" class="text-gray-300 hover:text-emerald-400 transition flex items-center group">
+                    <i class="fas fa-chevron-right text-xs mr-2 text-emerald-400 opacity-0 group-hover:opacity-100 transition"></i>
+                    Tentang Peternakan
+                  </a>
+                </li>
+                <li>
+                  <a href="#proses" class="text-gray-300 hover:text-emerald-400 transition flex items-center group">
+                    <i class="fas fa-chevron-right text-xs mr-2 text-emerald-400 opacity-0 group-hover:opacity-100 transition"></i>
+                    Proses Pembelian
+                  </a>
+                </li>
+              </ul>
+            </div>
+      
+            <!-- Column 3: Contact -->
+            <div>
+              <h4 class="font-bold text-lg mb-6 text-white border-b border-emerald-400 pb-2 inline-block">Hubungi Kami</h4>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <i class="fas fa-map-marker-alt mt-1 mr-4 text-emerald-400"></i>
+                  <span class="text-gray-300">Desa Semawot, Kec. Sukosewu, Kab. Bojonegoro, Jawa Timur</span>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-phone-alt mt-1 mr-4 text-emerald-400"></i>
+                  <a href="tel:+6285330000427" class="text-gray-300 hover:text-emerald-400 transition">0853-3000-0427</a>
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-envelope mt-1 mr-4 text-emerald-400"></i>
+                  <a href="mailto:info@sapimaju.com" class="text-gray-300 hover:text-emerald-400 transition">info@sapimaju.com</a>
+                </li>
+                <li class="flex items-center">
+                  <i class="fab fa-whatsapp mt-1 mr-4 text-emerald-400"></i>
+                  <a href="https://wa.me/6285330000427" class="text-gray-300 hover:text-emerald-400 transition">WhatsApp Business</a>
+                </li>
+              </ul>
+            </div>
+      
+            
+      
+          <!-- Copyright -->
+          <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm text-center md:text-left mb-4 md:mb-0">
+              © 2025 <span class="text-emerald-400">SapiMaju</span>. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6285330000427" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-lg transition transform hover:scale-110">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-24 right-6 bg-primary hover:bg-green-700 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="main.js"></script>
+    <script src="sapi.js"></script>
+    <script src="faq.js"></script>
+</body>
+</html>
